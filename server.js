@@ -1,12 +1,11 @@
 var http = require('http');
-var io = require('socket.io');
 var port = process.env.PORT || 1337;
 http.createServer(function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World\n');
+  res.end('Hello World' + process.env.port + '\n');
 }).listen(port);
 
-io.listen(8080);
+var io = require('socket.io').listen(process.env.port);
 
 io.sockets.on('connection', function (socket) {
   	socket.on('speak', function (data) {
