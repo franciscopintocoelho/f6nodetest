@@ -15,7 +15,7 @@ io.sockets.on('connection', function (socket) {
   console.log('user connected');
 
   socket.on('sendMessage', function(data){
-    console.log('user sent the message: ' + data.message + '\n');
+    console.log('user sent: ' + data.message + '\n');
     socket.emit('helloBack', { message: 'Hello back!' });
   });
 });
