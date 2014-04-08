@@ -1,4 +1,4 @@
-var port = 81;
+var port = process.env.port || 81;
 
 var app = require('http').createServer(handler),
 	io = require('socket.io').listen(app)
