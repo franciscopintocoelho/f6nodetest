@@ -14,7 +14,7 @@ function handler (req, res) {
 io.sockets.on('connection', function (socket) {
 	console.log('connected');
 	
-	socket.on('location', function (data) {
+	socket.on('f6beacons', function (data) {
 		io.sockets.emit('location', data);
 	});
 
